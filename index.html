@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <!-- Your own CSS -->
+    <style>
+        #turtlecanvas, #imagecanvas {
+            background-color: yellowgreen;
+            width: 100%;
+            height: auto;
+        }
+        #editor {
+            height: 447px;
+            width: 100%;
+        }
+        #output {
+            background-color: #b9bbbe;
+            height: 220px;
+            overflow: scroll;
+        }
+        #algorithms {
+            height: 450px;
+            overflow: scroll;
+        }
+        .jumbotron {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron border border">
+            <h1>AlgoFun</h1>
+            <p> >> Visualize Algorithms in Javascript </p>
+        </div>
+        <div class="row ">
+            <div id="algorithms" class="col-sm-2">
+                <h6>Algorithms</h6>
+                <ol>
+                    <li>First</li>
+                    <li>Second</li>
+                    <li>Third</li>
+                    <li>Fourth</li>
+                    <li>First</li>
+                    <li>Second</li>
+                    <li>Third</li>
+                    <li>Fourth</li>
+                    <li>First</li>
+                    <li>Second</li>
+                    <li>Third</li>
+                    <li>Fourth</li>
+                    <li>First</li>
+                    <li>Second</li>
+                    <li>Third</li>
+                    <li>Fourth</li>
+                    <li>First</li>
+                    <li>Second</li>
+                    <li>Third</li>
+                    <li>Fourth</li>
+                    <li>Third</li>
+                    <li>Fourth</li>
+                    <li>First</li>
+                    <li>Second</li>
+                    <li>Third</li>
+                    <li>Fourth</li>
+                </ol>
+            </div>
+            <div class="col-sm-5">
+                <h6>Editor | <span id="run" class="badge badge-primary">Run</span></h6>
+                <div id="editor">// Javascript Code </div>
+            </div>
+            <div class="col-sm-5">
+                <h6>Canvas</h6>
+                <canvas id="turtlecanvas" width="300" height="300"></canvas>
+                <canvas id="imagecanvas" width="300" height="300" style="display:none"></canvas>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10">
+                <h6>Output</h6>
+                <p id="output"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script src="./lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      var editor = ace.edit("editor");
+      editor.setTheme("ace/theme/monokai");
+      editor.getSession().setMode("ace/mode/javascript");
+      editor.getSession().setTabSize(2);
+
+      // a trick to redirect console log from eval
+      console.oldLog = console.log;
+      console.log = function(value) {
+        console.oldLog(value);
+        return value;
+      };
+
+      // get output
+      function run() {
+        $("#output").append(">> " + eval(editor.getValue()) + "<br>");
+      }
+
+      $("#run").bind("click", run);
+    </script>
+
+    <!-- Your own JS -->
+    <script src='./lib/turtle.js'></script>
+</body>
+</html>
