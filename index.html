@@ -41,6 +41,7 @@
             <div class="col-sm-6">
                 <h6>|<span id="run" class="badge badge-primary">Run</span> = <span class="badge">Ctrl + Enter</span>
                     |<span id="help" class="badge badge-primary">Help</span> = <span class="badge">Ctrl + ?</span>
+                    |<span id="vim" class="badge badge-primary">Vim?</span> = <span class="badge">Ctrl + .</span>
                 </h6>
                 <div id="editor" class="rounded">// Javascript Code </div>
             </div>
@@ -61,6 +62,22 @@
     </div>
 
     <!-- Modals -->
+    <div id="successModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header alert alert-success">
+                    <h5 class="modal-title">Download Success!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Ready to experiment this library? Good luck ;)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="errorModal" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -93,10 +110,13 @@
                         <mark>Artist</mark> mode. Read more below to learn how to use the commands.
                     </p>
                     <p>
-                        Disclaimer: Not all algorithms can be easily expressed visually but many of them do.
+                        <u>Disclaimer</u>: Not all algorithms can be easily expressed visually but many of them do.
                         The author of AlgoFun currently likes to focus on <mark>RECURSIVE</mark>
                         algorithms and try to express each one of them in an artistic way.
                         If you share the same interest or would like to contribute, please send him your Algo as a pull request ;)
+                    </p>
+                    <p>
+                        <u>Note</u>: Make sure to turn off Vimium (Chrome) or Vimperator (Firefox) if you are an avid Vim user
                     </p>
                 </div>
             </div>
@@ -165,8 +185,8 @@
                 </div>
                 <div id="extramd" class="modal-body">
                     <dl>
-                        <dt>$.getScript(url[,success])</dt>
-                        <dd>:: load a JS file from some url then execute it, read more at <a href="https://api.jquery.com/jquery.getscript/" target="_blank">jQuery</a></dd>
+                        <dt>$.download(url)</dt>
+                        <dd>:: download a javascript file to your browser <mark>!!Super Cool!!</mark></a></dd>
                     </dl>
                 </div>
             </div>

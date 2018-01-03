@@ -29,7 +29,7 @@ body {
     overflow: scroll;
 }
 
-#run, #help, #info, #algorithms li {
+#run, #help, #vim, #algorithms li {
     cursor:pointer;
 }
 

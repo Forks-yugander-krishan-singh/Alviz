@@ -2,6 +2,8 @@ var editor = ace.edit("editor");
 editor.setTheme("ace/theme/monokai");
 editor.getSession().setMode("ace/mode/javascript");
 editor.getSession().setTabSize(2);
+editor.isVim = false;
+
 
 
 // global variable for artist canvas
@@ -32,15 +34,30 @@ function help() {
   $("#helpModal").modal("show")
 }
 
+function vimToggle() {
+  if (!editor.isVim) {
+    editor.setKeyboardHandler("ace/keyboard/vim");
+    editor.isVim = true;
+    $("#vim").text("Vim");
+  } else {
+    editor.setKeyboardHandler("");
+    editor.isVim = false;
+    $("#vim").text("Vim?");
+  }
+}
+
 // bind click action on editor
 $("#run").bind("click", run);
 $("#help").bind("click", help);
+$("#vim").bind("click", vimToggle);
 // bind short keys action on editor
 $(document).keydown((event) => {
     if ((event.keyCode == 10 || event.keyCode == 13) && event.ctrlKey) {
       run();
     } else if (event.keyCode == 191 && event.ctrlKey) {
       help();
+    } else if (event.keyCode == 190 && event.ctrlKey) {
+      vimToggle();
     };
 });
 
@@ -114,6 +131,8 @@ function toggleCanvas(){
 $("#turtlebox").click(toggleCanvas);
 
 
+
+
 // algofun public API
 var resetA = function() {
   // reset artist mode
@@ -126,4 +145,16 @@ var resetT = function() {
   // reset turtle mode
   reset();
   console.log('Turtle Mode has been reset!')
+};
+
+var download = function(path) {
+  // download and execute an external js file
+  $.getScript(path)
+    .done(function(){
+      $("#successModal").modal('show');
+    })
+    .fail(function(){
+      $("#errorModal").modal('show');
+  })
+
 };
