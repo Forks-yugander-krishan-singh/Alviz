@@ -1,0 +1,29 @@
+body {
+    background: #75715E;
+    font-family: 'Itim', cursive;
+
+}
+#turtlecanvas, #imagecanvas {
+    background-color: yellowgreen;
+    width: 100%;
+}
+#editor {
+    height: 447px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+#output {
+    background-color: #001f3f;
+    color: yellow;
+    height: 220px;
+    overflow: scroll;
+}
+#algorithms {
+    height: 450px;
+    overflow: scroll;
+}
+.jumbotron {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
