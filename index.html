@@ -26,7 +26,7 @@
         </div>
         <div class="row">
             <div id="algorithms" class="col-sm-2 small">
-                <h6>Algorithms</h6>
+                <h6>Algos</h6>
                 <ol>
                     <li name="turtle" id="first">First</li>
                     <li name="output" id="second">Second</li>
@@ -39,13 +39,13 @@
                 </ol>
             </div>
             <div class="col-sm-6">
-                <h6>Editor |<span id="run" class="badge badge-primary">Run</span> = <span class="badge">Ctrl + Enter</span>
-                           |<span id="help" class="badge badge-primary">Help</span> = <span class="badge">Ctrl + ?</span>
+                <h6>|<span id="run" class="badge badge-primary">Run</span> = <span class="badge">Ctrl + Enter</span>
+                    |<span id="help" class="badge badge-primary">Help</span> = <span class="badge">Ctrl + ?</span>
                 </h6>
                 <div id="editor" class="rounded">// Javascript Code </div>
             </div>
             <div class="col-sm-4">
-                <h6>Turtle Canvas <input id="turtlebox" type="checkbox" checked/> </h6>
+                <h6><span id="cvtype">Turtle</span> <input id="turtlebox" type="checkbox" checked/></h6>
                 <canvas id="turtlecanvas" class="rounded" height="300"></canvas>
                 <canvas id="imagecanvas"  class="rounded" height="300" style="display:none"></canvas>
                 <canvas id="artistcanvas" class="rounded" height="300" style="display:none"></canvas>
@@ -54,7 +54,7 @@
         <div class="row ">
             <div class="col-sm-2"></div>
             <div class="col-sm-10">
-                <h6>Output</h6>
+                <h6>Log</h6>
                 <p id="output" class="rounded"></p>
             </div>
         </div>
@@ -82,42 +82,98 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header alert alert-info">
-                    <h5 class="modal-title">Basic Commands for 'Turtle Canvas'</h5>
+                    <h5 class="modal-title">What's the fuss about...</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div id="intromd" class="modal-body">
+                    <p><mark>AlgoFun</mark> is a fun way to learn algorithm visualization in Javascript.
+                        It is pre-loaded with Javascript libraries to support drawing in <mark>Turtle</mark> mode or
+                        <mark>Artist</mark> mode. Read more below to learn how to use the commands.
+                    </p>
+                    <p>
+                        Disclaimer: Not all algorithms can be easily expressed visually but many of them do.
+                        The author of AlgoFun currently likes to focus on <mark>RECURSIVE</mark>
+                        algorithms and try to express each one of them in an artistic way.
+                        If you share the same interest or would like to contribute, please send him your Algo as a pull request ;)
+                    </p>
+                </div>
+            </div>
+            <div class="modal-content">
+                <div class="modal-header alert alert-success">
+                    <h5 class="modal-title"><mark>Turtle</mark> Mode</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="turtlemd" class="modal-body">
                     <dl>
-                        <dt>forward(distance)</dt>
-                        <dd>_-_ move Turtle forward distance pixels</dd>
-                        <dt>left(angle)</dt>
-                        <dd>_-_ turn Turtle left angle degrees</dd>
-                        <dt>right(angle)</dt>
-                        <dd>_-_ turn Turtle right angle degrees</dd>
+                        <dt>resetT()</dt>
+                        <dd>:: reset Turtle to original state</dd>
                         <dt>clear()</dt>
-                        <dd>_-_ clear the canvas but keep Turtle's current position</dd>
-                        <dt>reset()</dt>
-                        <dd>_-_ reset Turtle to original state</dd>
+                        <dd>:: clear the canvas but keep Turtle's current position</dd>
+                        <dt>forward(distance)</dt>
+                        <dd>:: move Turtle forward distance pixels</dd>
+                        <dt>left(angle)</dt>
+                        <dd>:: turn Turtle left angle degrees</dd>
+                        <dt>right(angle)</dt>
+                        <dd>:: turn Turtle right angle degrees</dd>
                         <dt>hideTurtle()</dt>
-                        <dd>_-_ hide the Turtle</dd>
+                        <dd>:: hide the Turtle</dd>
                         <dt>showTurtle()</dt>
-                        <dd>_-_ show the Turtle</dd>
+                        <dd>:: show the Turtle</dd>
                         <dt>goto(x, y)</dt>
-                        <dd>_-_ move the Turtle to (x, y) coordinate</dd>
+                        <dd>:: move the Turtle to (x, y) coordinate</dd>
                         <dt>write(string)</dt>
-                        <dd>_-_ draw a string on canvas on Turtle's current position</dd>
+                        <dd>:: draw a string on canvas on Turtle's current position</dd>
                         <dt>wrap(boolean)</dt>
-                        <dd>_-_ wrap the line when Turtle moves out of the boundary of canvas</dd>
+                        <dd>:: wrap the line when Turtle moves out of the boundary of canvas</dd>
                         <dt>penup()</dt>
-                        <dd>_-_ lift the Turtle up -> no drawing when calling forward(distance)</dd>
+                        <dd>:: lift the Turtle up -> no drawing when calling forward(distance)</dd>
                         <dt>pendown()</dt>
-                        <dd>_-_ set the Turtle down</dd>
+                        <dd>:: set the Turtle down</dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="modal-content">
+                <div class="modal-header alert alert-primary">
+                    <h5 class="modal-title"><mark>Artist</mark> Mode</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="artistmd" class="modal-body">
+                    <dl>
+                        <dt>resetA()</dt>
+                        <dd>:: reset all canvases to be like original</dd>
+                        <dt>cv</dt>
+                        <dd>:: [object HTMLCanvasElement] is the canvas object in Artist mode</dd>
+                        <dt>ctx</dt>
+                        <dd>:: [object CanvasRenderingContext2D] is the 2D context object in Artist mode</dd>
+                        <dt>new Chart(ctx, chart)</dt>
+                        <dd>:: render a chart, read more at <a href="http://www.chartjs.org/docs/latest/getting-started/" target="_blank">chartjs</a> documentation </dd>
+                    </dl>
+                </div>
+            </div>
+            <div class="modal-content">
+                <div class="modal-header alert alert-warning">
+                    <h5 class="modal-title">Extras</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="extramd" class="modal-body">
+                    <dl>
+                        <dt>$.getScript(url[,success])</dt>
+                        <dd>:: load a JS file from some url then execute it, read more at <a href="https://api.jquery.com/jquery.getscript/" target="_blank">jQuery</a></dd>
                     </dl>
                 </div>
             </div>
         </div>
     </div>
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

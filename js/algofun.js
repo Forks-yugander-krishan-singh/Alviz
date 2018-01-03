@@ -3,6 +3,11 @@ editor.setTheme("ace/theme/monokai");
 editor.getSession().setMode("ace/mode/javascript");
 editor.getSession().setTabSize(2);
 
+
+// global variable for artist canvas
+var cv = $("#artistcanvas")[0];
+var ctx = cv.getContext("2d");
+
 // a trick to redirect console log from eval
 var output = [];
 console.oldLog = console.log;
@@ -97,10 +102,12 @@ function toggleCanvas(){
   if (ckb) {
     $("#turtlecanvas").toggle(true);
     $("#artistcanvas").toggle(false);
+    $("#cvtype").text("Turtle");
   }
   else {
     $("#turtlecanvas").toggle(false);
     $("#artistcanvas").toggle(true);
+    $("#cvtype").text("Artist");
   }
 }
 
@@ -108,12 +115,15 @@ $("#turtlebox").click(toggleCanvas);
 
 
 // algofun public API
-var resetAll = function() {
-  //reset all canvases
-  reset();
-  cv = $("#artistcanvas")[0];
-  ctx = cv.getContext("2d");
+var resetA = function() {
+  // reset artist mode
   ctx.clearRect(0, 0, cv.width, cv.height);
-  console.log('All canvases have been reset!')
+  console.log('Artist Mode has been reset!')
 };
 
+
+var resetT = function() {
+  // reset turtle mode
+  reset();
+  console.log('Turtle Mode has been reset!')
+};

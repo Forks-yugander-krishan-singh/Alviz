@@ -29,7 +29,7 @@ body {
     overflow: scroll;
 }
 
-#run, #help, #algorithms li {
+#run, #help, #info, #algorithms li {
     cursor:pointer;
 }
 
@@ -46,8 +46,16 @@ body {
     margin-top: 5px;
 }
 
-dt {
+#turtlemd dt {
     color: darkgreen;
+}
+
+#artistmd dt {
+    color: #144180;
+}
+
+#extramd dt {
+    color: #806420;
 }
 
 li[name="turtle"] {
