@@ -1,5 +1,4 @@
 body {
-    background: #75715E;
     font-family: 'Itim', cursive;
 
 }
@@ -7,6 +6,12 @@ body {
     background-color: yellowgreen;
     width: 100%;
 }
+
+#artistcanvas {
+    background-color: #80bdff;
+    width: 100%;
+}
+
 #editor {
     height: 447px;
     width: 100%;
@@ -15,15 +20,45 @@ body {
 #output {
     background-color: #001f3f;
     color: yellow;
-    height: 220px;
+    height: 160px;
     overflow: scroll;
+    margin-bottom: 10px;
 }
 #algorithms {
-    height: 450px;
+    max-height: 450px;
     overflow: scroll;
 }
+
+#run, #help, #algorithms li {
+    cursor:pointer;
+}
+
 .jumbotron {
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
 }
+
+.container {
+    background: #6c757d;
+    padding-top: 10px;
+    margin-top: 5px;
+}
+
+dt {
+    color: darkgreen;
+}
+
+li[name="turtle"] {
+    color: yellowgreen;
+}
+
+li[name="artist"] {
+    color: #80bdff;
+}
+
+li[name="output"] {
+    color: #001f3f;
+}
+

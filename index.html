@@ -8,80 +8,127 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 
+    <!-- Bootstrap Toggle -->
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
-
 
     <!-- Your own CSS -->
     <link rel="stylesheet" href="./css/algofun.css">
 
 </head>
 <body>
-    <div class="container text-light">
+    <div class="container text-light rounded">
         <div class="jumbotron text-dark">
             <h1>AlgoFun</h1>
-            <p> >> The Art of Recursive Algorithms </p>
+            <p id="description">_-_-_- The Art of Algorithm Visualization -_-_-_ </p>
         </div>
         <div class="row">
             <div id="algorithms" class="col-sm-2 small">
                 <h6>Algorithms</h6>
                 <ol>
-                    <li>First</li>
-                    <li>Second</li>
-                    <li>Third</li>
-                    <li>Fourth</li>
-                    <li>First</li>
-                    <li>Second</li>
-                    <li>Third</li>
-                    <li>Fourth</li>
-                    <li>First</li>
-                    <li>Second</li>
-                    <li>Third</li>
-                    <li>Fourth</li>
-                    <li>First</li>
-                    <li>Second</li>
-                    <li>Third</li>
-                    <li>Fourth</li>
-                    <li>First</li>
-                    <li>Second</li>
-                    <li>Third</li>
-                    <li>Fourth</li>
-                    <li>Third</li>
-                    <li>Fourth</li>
-                    <li>First</li>
-                    <li>Second</li>
-                    <li>Third</li>
-                    <li>Fourth</li>
+                    <li name="turtle" id="first">First</li>
+                    <li name="output" id="second">Second</li>
+                    <li name="artist">Third</li>
+                    <li name="artist">Fourth</li>
+                    <li name="turtle">Fifth</lin>
+                    <li name="output">Sixth</li>
+                    <li name="output">Seventh</li>
+                    <li name="output">Eighth</li>
                 </ol>
             </div>
             <div class="col-sm-6">
-                <h6>Editor | <span id="run" class="badge badge-primary">Run</span><span class="badge">Ctrl + Enter</span></h6>
-                <div id="editor">// Javascript Code </div>
+                <h6>Editor |<span id="run" class="badge badge-primary">Run</span> = <span class="badge">Ctrl + Enter</span>
+                           |<span id="help" class="badge badge-primary">Help</span> = <span class="badge">Ctrl + ?</span>
+                </h6>
+                <div id="editor" class="rounded">// Javascript Code </div>
             </div>
             <div class="col-sm-4">
-                <h6>Canvas</h6>
-                <canvas id="turtlecanvas" height="300"></canvas>
-                <canvas id="imagecanvas"  height="300" style="display:none"></canvas>
+                <h6>Turtle Canvas <input id="turtlebox" type="checkbox" checked/> </h6>
+                <canvas id="turtlecanvas" class="rounded" height="300"></canvas>
+                <canvas id="imagecanvas"  class="rounded" height="300" style="display:none"></canvas>
+                <canvas id="artistcanvas" class="rounded" height="300" style="display:none"></canvas>
             </div>
         </div>
         <div class="row ">
             <div class="col-sm-2"></div>
             <div class="col-sm-10">
                 <h6>Output</h6>
-                <p id="output"></p>
+                <p id="output" class="rounded"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="errorModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header alert alert-danger">
+                    <h5 class="modal-title">Oops!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Could not retrieve file from server -__-</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="helpModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header alert alert-info">
+                    <h5 class="modal-title">Basic Commands for 'Turtle Canvas'</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <dl>
+                        <dt>forward(distance)</dt>
+                        <dd>_-_ move Turtle forward distance pixels</dd>
+                        <dt>left(angle)</dt>
+                        <dd>_-_ turn Turtle left angle degrees</dd>
+                        <dt>right(angle)</dt>
+                        <dd>_-_ turn Turtle right angle degrees</dd>
+                        <dt>clear()</dt>
+                        <dd>_-_ clear the canvas but keep Turtle's current position</dd>
+                        <dt>reset()</dt>
+                        <dd>_-_ reset Turtle to original state</dd>
+                        <dt>hideTurtle()</dt>
+                        <dd>_-_ hide the Turtle</dd>
+                        <dt>showTurtle()</dt>
+                        <dd>_-_ show the Turtle</dd>
+                        <dt>goto(x, y)</dt>
+                        <dd>_-_ move the Turtle to (x, y) coordinate</dd>
+                        <dt>write(string)</dt>
+                        <dd>_-_ draw a string on canvas on Turtle's current position</dd>
+                        <dt>wrap(boolean)</dt>
+                        <dd>_-_ wrap the line when Turtle moves out of the boundary of canvas</dd>
+                        <dt>penup()</dt>
+                        <dd>_-_ lift the Turtle up -> no drawing when calling forward(distance)</dd>
+                        <dt>pendown()</dt>
+                        <dd>_-_ set the Turtle down</dd>
+                    </dl>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/algofun.js"></script>
-
-    <!-- Your own JS -->
     <script src='js/turtle.js'></script>
+    <!-- Your own JS -->
+    <script src="js/algofun.js"></script>
 </body>
 </html>
