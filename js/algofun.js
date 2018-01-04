@@ -21,7 +21,15 @@ console.log = function(value) {
 // get output
 function run() {
   output = [];
-  output.push(eval(editor.getValue()));
+  var result;
+  try {
+    result = eval(editor.getValue());
+  } catch (e) {
+    $("#errorModal .modal-body p").text(e);
+    $("#errorModal").modal("show");
+  }
+
+  output.push(result);
   $("#output").text("");
   for (let i = 0; i < output.length; i++) {
     if (output[i] !== undefined) {
@@ -70,9 +78,9 @@ function error() {
 
 // load file content to editor
 function load() {
-  // construct new path by looking at its own id
+  // construct new path by looking at its text
   // note `this` is bound to the li being clicked
-  var currentFile = $(this).attr("id") + ".js";
+  var currentFile = $(this).text() + ".js";
   var newPath = window.location.protocol
                 + "//"
                 + window.location.host
