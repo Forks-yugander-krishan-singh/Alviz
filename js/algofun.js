@@ -141,21 +141,15 @@ $("#turtlebox").click(toggleCanvas);
 
 
 
-// algofun public API
-var resetA = function() {
+// Artist mode public API
+function areset() {
   // reset artist mode
   ctx.clearRect(0, 0, cv.width, cv.height);
   console.log('Artist Mode has been reset!')
 };
 
 
-var resetT = function() {
-  // reset turtle mode
-  reset();
-  console.log('Turtle Mode has been reset!')
-};
-
-var download = function(path) {
+function download(path) {
   // download and execute an external js file
   $.getScript(path)
     .done(function(){
@@ -164,5 +158,13 @@ var download = function(path) {
     .fail(function(){
       $("#errorModal").modal('show');
   })
-
 };
+
+
+function acv() {
+  return cv;
+}
+
+function actx() {
+  return ctx;
+}

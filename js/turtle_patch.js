@@ -57,14 +57,14 @@ function _tinit() {
 
 
 ///////////////////////////////////////////////////////////////////
-//////////////////// PUBLIC API EXCEPT _tinit() //////////////////
+//////////////       PUBLIC API                 //////////////////
 /////////////////////////////////////////////////////////////////
 
 // auto call
 _tinit();
 
-function tspeed(s) {
-  if (s == undefined) {
+function tspeed(s = null) {
+  if (s == null) {
     return _speed;
   } else {
     _speed = s;
@@ -118,3 +118,24 @@ function tpenup() {
 function tpendown() {
   _animate(pendown, [null]);
 }
+
+function tcsize() {
+  return [imageCanvas.width, imageCanvas.height];
+}
+
+function tpos() {
+  return [turtle.pos.x, turtle.pos.y];
+}
+
+function theading() {
+  return radToDeg(turtle.angle);
+}
+
+// function tsetheading(deg) {
+//   _animate(angle, [deg]);
+// }
+
+var tsetheading = angle;
+
+
+var tsetpos = tgoto;

@@ -12,9 +12,7 @@ function koch(order, size) {
   }
 }
 
-resetT();
-speed = 2000;
+tspeed(2000);
 tright(90);
-goto(-100, 0);
-wrap(false);
+tgoto(-100, 0);
 koch(4,200);

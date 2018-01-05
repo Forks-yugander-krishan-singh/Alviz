@@ -245,8 +245,8 @@ function degToRad(deg) {
 }
 
 // convert radians to degrees
-function radToDeg(deg) {
-   return deg * 180 / Math.PI;
+function radToDeg(rad) {
+   return rad * 180 / Math.PI;
 }
 
 // set the width of the line

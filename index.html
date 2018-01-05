@@ -29,7 +29,7 @@
                 <h6>Algos</h6>
                 <ol>
                     <li name="turtle">koch</li>
-                    <li name="turtle">fractal_tree</li>
+                    <li name="turtle">fractal60</li>
                     <li name="artist">heap_sort</li>
                 </ol>
             </div>
@@ -105,10 +105,10 @@
                         <mark>Artist</mark> mode. Read more below to learn how to use the commands.
                     </p>
                     <p>
-                        <u>Disclaimer</u>: Not all algorithms can be easily expressed visually but many of them do.
-                        The author of AlgoFun likes to focus on <mark>RECURSIVE</mark>
-                        algorithms and try to express each one of them in an artistic way.
-                        If you share the same interest or would like to contribute, please send him your 'Algo' as a pull request.
+                        <u>Disclaimer</u>: Not all algorithms can easily be expressed visually but many of them do.
+                        I have personally found it fascinating on <mark>recursive</mark> algorithms which make beautiful arts
+                        such as fractal, snowflakes, etc. If you have any interesting algorithm to share, don't hesitate
+                        to send me a pull request, please! ;)
                     </p>
                     <p>
                         <u>Note</u>: Make sure to turn off Vimium (Chrome) or Vimperator (Firefox) if you are an avid Vim user.
@@ -124,30 +124,34 @@
                 </div>
                 <div id="turtlemd" class="modal-body">
                     <dl>
-                        <dt>resetT()</dt>
+                        <dt>tspeed(speed = null)</dt>
+                        <dd>:: get or set Turtle speed </dd>
+                        <dt>treset()</dt>
                         <dd>:: reset Turtle to original state</dd>
-                        <dt>clear()</dt>
+                        <dt>tclear()</dt>
                         <dd>:: clear the canvas but keep Turtle's current position</dd>
-                        <dt>forward(distance)</dt>
+                        <dt>tforward(distance)</dt>
                         <dd>:: move Turtle forward distance pixels</dd>
-                        <dt>left(angle)</dt>
+                        <dt>tleft(angle)</dt>
                         <dd>:: turn Turtle left angle degrees</dd>
-                        <dt>right(angle)</dt>
+                        <dt>tright(angle)</dt>
                         <dd>:: turn Turtle right angle degrees</dd>
-                        <dt>hideTurtle()</dt>
+                        <dt>thide()</dt>
                         <dd>:: hide the Turtle</dd>
-                        <dt>showTurtle()</dt>
+                        <dt>tshow()</dt>
                         <dd>:: show the Turtle</dd>
-                        <dt>goto(x, y)</dt>
+                        <dt>tgoto(x, y)</dt>
                         <dd>:: move the Turtle to (x, y) coordinate</dd>
-                        <dt>write(string)</dt>
+                        <dt>twrite(string)</dt>
                         <dd>:: draw a string on canvas on Turtle's current position</dd>
-                        <dt>wrap(boolean)</dt>
+                        <dt>twrap(boolean)</dt>
                         <dd>:: wrap the line when Turtle moves out of the boundary of canvas</dd>
-                        <dt>penup()</dt>
+                        <dt>tpenup()</dt>
                         <dd>:: lift the Turtle up -> no drawing when calling forward(distance)</dd>
-                        <dt>pendown()</dt>
+                        <dt>tpendown()</dt>
                         <dd>:: set the Turtle down</dd>
+                        <dt>tcsize()</dt>
+                        <dd>:: get canvas' size</dd>
                     </dl>
                 </div>
             </div>
@@ -160,14 +164,12 @@
                 </div>
                 <div id="artistmd" class="modal-body">
                     <dl>
-                        <dt>resetA()</dt>
-                        <dd>:: reset all canvases to be like original</dd>
-                        <dt>cv</dt>
-                        <dd>:: [object HTMLCanvasElement] is the canvas object in Artist mode</dd>
-                        <dt>ctx</dt>
-                        <dd>:: [object CanvasRenderingContext2D] is the 2D context object in Artist mode</dd>
-                        <dt>new Chart(ctx, chart)</dt>
-                        <dd>:: render a chart, read more at <a href="http://www.chartjs.org/docs/latest/getting-started/" target="_blank">chartjs</a> documentation </dd>
+                        <dt>areset()</dt>
+                        <dd>:: reset Artist canvas</dd>
+                        <dt>acv</dt>
+                        <dd>:: HTMLCanvasElement canvas object </dd>
+                        <dt>actx</dt>
+                        <dd>:: CanvasRenderingContext2D object </dd>
                     </dl>
                 </div>
             </div>
@@ -181,7 +183,7 @@
                 <div id="extramd" class="modal-body">
                     <dl>
                         <dt>download(url)</dt>
-                        <dd>:: download a javascript file to your browser <mark>!!Super Cool!!</mark></a></dd>
+                        <dd>:: embed external javascript library to be used with AlgoFun</dd>
                     </dl>
                 </div>
             </div>
