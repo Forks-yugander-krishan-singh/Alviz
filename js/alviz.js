@@ -128,7 +128,7 @@ function load() {
     var newPath = "../recipes/" + currentFile;
   }
   else {
-    var newPath = "https://cdn.rawgit.com/hoangdangninh/Alviz/72473455/recipes/" + currentFile;
+    var newPath = "https://cdn.rawgit.com/hoangdangninh/Alviz/master/recipes/" + currentFile;
   }
   var jqxhr = $.get(newPath, function(data) {
       editor.setValue(data);

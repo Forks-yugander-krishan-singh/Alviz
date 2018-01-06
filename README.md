@@ -1,6 +1,6 @@
 # Alviz 
 Practice algorithms like an Artist! :turtle::turtle::turtle:
-* [Try it here](https://cdn.rawgit.com/hoangdangninh/Alviz/72473455/index.html)
+* [Try it here](https://cdn.rawgit.com/hoangdangninh/Alviz/master/index.html)
 
 ## Getting Started
 Instructions on how to get this project running on your local machine
