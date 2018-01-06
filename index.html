@@ -1,23 +1,18 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <!-- vendor css -->
+    <link rel="stylesheet" href="./css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/vendor/bootstrap-toggle.min.css">
+    <link rel="stylesheet" href="./css/vendor/itim-font.css">
 
-    <!-- Bootstrap Toggle -->
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
-
-    <!-- Your own CSS -->
+    <!-- alviz css -->
     <link rel="stylesheet" href="./css/alviz.css">
-
 </head>
+
 <body>
     <div class="container text-light rounded">
         <div class="jumbotron text-dark">
@@ -107,9 +102,9 @@
                         <mark>Artist</mark> mode. Read more below to learn how to use the commands.
                     </p>
                     <p>
-                        <u>Help Wanted</u>: Not all algorithms can easily be expressed visually but many of them do.
+                        <u>Help Wanted</u>:
                         I found it fascinating on <mark>recursive</mark> algorithms (a.k.a 'recipes') which make beautiful arts
-                        such as fractal, snowflakes, etc. If you have an interesting recipe to share (ie, recursively drawing a cat),
+                        such as fractals, snowflakes, etc. If you have an interesting recipe to share (ie, recursively drawing a cat),
                         please send me an email or a pull request!
                     </p>
                     <p>
@@ -203,19 +198,19 @@
     </div>
 
 
+    <!--- vendor JS ----------->
+    <script type="text/javascript" src="./js/vendor/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./js/vendor/popper.min.js"></script>
+    <script type="text/javascript" src="./js/vendor/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/vendor/bootstrap-toggle.min.js"></script>
+    <script type="text/javascript" src="./js/vendor/Chart.min.js"></script>
+    <script type="text/javascript" src="./js/vendor/underscore-min.js"></script>
+    <script type="text/javascript" src="./js/vendor/ace/ace.js"></script>
+    <script type="text/javascript" src='./js/vendor/turtle.js'></script>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <script src="js/underscore-min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
-    <script src='js/turtle.js'></script>
-    <script src='js/turtle_patch.js'></script>
-    <!-- Your own JS -->
-    <script src="js/alviz.js"></script>
+    <!--- alviz JS ------------>
+    <script src='./js/turtle_patch.js'></script>
+    <script src="./js/alviz.js"></script>
+
 </body>
 </html>

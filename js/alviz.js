@@ -113,7 +113,7 @@ function load() {
                 + "//"
                 + window.location.host
                 + "/"
-                + "AlgoFun/algos"
+                + "Alviz/recipes"
                 + "/"
                 + currentFile;
   var jqxhr = $.get(newPath, function(data) {
