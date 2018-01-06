@@ -1,3 +1,12 @@
+/*
+***
+*** @author: hd                                             ***
+*** @description:  The nuts and bolt of Alviz               ***
+*** @date: 01/05/2018                                       ***
+*** @license: MIT                                           ***
+***
+*/
+
 var editor = ace.edit("editor");
 editor.setTheme("ace/theme/monokai");
 editor.getSession().setMode("ace/mode/javascript");
