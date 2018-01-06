@@ -134,29 +134,29 @@ function _getpos(obj) {
 
 function theading(obj) {
   _animate(_getheading, [obj]);
-}
 
-function _getheading(obj) {
-  obj.angle = radToDeg(turtle.angle);
+  function _getheading(obj) {
+    obj.angle = radToDeg(turtle.angle);
+  }
 }
 
 function tsetpos(obj) {
   _animate(_setpos, [obj]);
-}
 
-function _setpos(obj) {
-  goto(obj.x, obj.y);
+  function _setpos(obj) {
+    goto(obj.x, obj.y);
+  }
+
 }
 
 function tsetheading(obj) {
   _animate(_setheading, [obj]);
-}
 
-function _setheading(obj) {
-  turtle.angle = degToRad(obj.angle);
-  draw();
+  function _setheading(obj) {
+    turtle.angle = degToRad(obj.angle);
+    draw();
+  }
 }
-
 
 function tlog(obj) {
   _animate(console.log, [obj]);

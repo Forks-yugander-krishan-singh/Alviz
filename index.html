@@ -15,28 +15,29 @@
     <link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
 
     <!-- Your own CSS -->
-    <link rel="stylesheet" href="./css/algofun.css">
+    <link rel="stylesheet" href="./css/alviz.css">
 
 </head>
 <body>
     <div class="container text-light rounded">
         <div class="jumbotron text-dark">
-            <h1>AlgoFun</h1>
-            <p id="description">_-_-_- The Art of Algorithm Visualization -_-_-_ </p>
+            <h1>Alviz</h1>
+            <p id="description">_-_-_- Algorithms && Visualization -_-_-_ </p>
         </div>
         <div class="row">
             <div id="algorithms" class="col-sm-2 small">
-                <h6>Algos</h6>
+                <h6>Al</h6>
                 <ol>
                     <li name="turtle">koch</li>
                     <li name="turtle">fractal60</li>
+                    <li name="turtle">fractal90</li>
                     <li name="artist">heap_sort</li>
                 </ol>
             </div>
             <div class="col-sm-6">
                 <h6>|<span id="run" class="badge badge-primary">Run</span> = <span class="badge">Ctrl + Enter</span>
-                    |<span id="help" class="badge badge-primary">Help</span> = <span class="badge">Ctrl + ?</span>
-                    |<span id="vim" class="badge badge-primary">Vim?</span> = <span class="badge">Ctrl + .</span>
+                    |<span id="help" class="badge badge-warning">Help</span> = <span class="badge">Ctrl + ?</span>
+                    |<span id="vim" class="badge badge-info">Vim?</span> = <span class="badge">Ctrl + .</span>
                 </h6>
                 <div id="editor" class="rounded">// Javascript Code </div>
             </div>
@@ -100,15 +101,15 @@
                     </button>
                 </div>
                 <div id="intromd" class="modal-body">
-                    <p><mark>AlgoFun</mark> is a fun way to learn algorithm visualization in Javascript.
+                    <p><mark>Alviz</mark> is a fun way to learn algorithm and visualization in Javascript.
                         It is pre-loaded with Javascript libraries to support drawing in <mark>Turtle</mark> mode or
                         <mark>Artist</mark> mode. Read more below to learn how to use the commands.
                     </p>
                     <p>
                         <u>Disclaimer</u>: Not all algorithms can easily be expressed visually but many of them do.
-                        I have personally found it fascinating on <mark>recursive</mark> algorithms which make beautiful arts
-                        such as fractal, snowflakes, etc. If you have any interesting algorithm to share, don't hesitate
-                        to send me a pull request, please! ;)
+                        I found it fascinating on <mark>recursive</mark> algorithms which make beautiful arts
+                        such as fractal, snowflakes, etc. If you have an interesting algorithm to share (i.e: recursively drawing a cat),
+                        please send me an email or a pull request!
                     </p>
                     <p>
                         <u>Note</u>: Make sure to turn off Vimium (Chrome) or Vimperator (Firefox) if you are an avid Vim user.
@@ -125,33 +126,43 @@
                 <div id="turtlemd" class="modal-body">
                     <dl>
                         <dt>tspeed(speed = null)</dt>
-                        <dd>:: get or set Turtle speed </dd>
+                        <dd>:: set Turtle's drawing speed </dd>
                         <dt>treset()</dt>
-                        <dd>:: reset Turtle to original state</dd>
+                        <dd>:: reset Turtle's mode</dd>
                         <dt>tclear()</dt>
-                        <dd>:: clear the canvas but keep Turtle's current position</dd>
+                        <dd>:: erase all drawings but keep Turtle's position </dd>
                         <dt>tforward(distance)</dt>
                         <dd>:: move Turtle forward distance pixels</dd>
                         <dt>tleft(angle)</dt>
-                        <dd>:: turn Turtle left angle degrees</dd>
+                        <dd>:: turn Turtle left an angle degree</dd>
                         <dt>tright(angle)</dt>
-                        <dd>:: turn Turtle right angle degrees</dd>
+                        <dd>:: turn Turtle right an angle degree</dd>
                         <dt>thide()</dt>
-                        <dd>:: hide the Turtle</dd>
+                        <dd>:: hide Turtle</dd>
                         <dt>tshow()</dt>
-                        <dd>:: show the Turtle</dd>
+                        <dd>:: show Turtle</dd>
+                        <dt>theading(obj)</dt>
+                        <dd>:: set obj.angle to Turtle's angle</dd>
+                        <dt>tsetheading(obj)</dt>
+                        <dd>:: set Turtle angle to obj.angle </dd>
                         <dt>tgoto(x, y)</dt>
-                        <dd>:: move the Turtle to (x, y) coordinate</dd>
-                        <dt>twrite(string)</dt>
-                        <dd>:: draw a string on canvas on Turtle's current position</dd>
+                        <dd>:: move Turtle to (x, y) coordinate</dd>
+                        <dt>tsetpos(obj)</dt>
+                        <dd>:: move Turtle to (obj.x, obj.y) coordinate</dd>
+                        <dt>tpos(obj)</dt>
+                        <dd>:: set (obj.x, obj.y) to Turtle's current position</dd>
+                        <dt>twrite(text)</dt>
+                        <dd>:: draw text on canvas at Turtle's current position</dd>
                         <dt>twrap(boolean)</dt>
-                        <dd>:: wrap the line when Turtle moves out of the boundary of canvas</dd>
+                        <dd>:: set canvas boundary when Turtle moves out of bound</dd>
                         <dt>tpenup()</dt>
-                        <dd>:: lift the Turtle up -> no drawing when calling forward(distance)</dd>
+                        <dd>:: lift Turtle up, drawing invisible</dd>
                         <dt>tpendown()</dt>
-                        <dd>:: set the Turtle down</dd>
+                        <dd>:: put Turtle down, drawing visible</dd>
+                        <dt>tlog(obj)</dt>
+                        <dd>:: show obj information</dd>
                         <dt>tcsize()</dt>
-                        <dd>:: get canvas' size</dd>
+                        <dd>:: show Turtle canvas size</dd>
                     </dl>
                 </div>
             </div>
@@ -165,7 +176,7 @@
                 <div id="artistmd" class="modal-body">
                     <dl>
                         <dt>areset()</dt>
-                        <dd>:: reset Artist canvas</dd>
+                        <dd>:: reset Artist's mode</dd>
                         <dt>acv</dt>
                         <dd>:: HTMLCanvasElement canvas object </dd>
                         <dt>actx</dt>
@@ -183,7 +194,7 @@
                 <div id="extramd" class="modal-body">
                     <dl>
                         <dt>download(url)</dt>
-                        <dd>:: embed external javascript library to be used with AlgoFun</dd>
+                        <dd>:: embed external javascript library to be used with Alviz</dd>
                     </dl>
                 </div>
             </div>
@@ -204,6 +215,6 @@
     <script src='js/turtle.js'></script>
     <script src='js/turtle_patch.js'></script>
     <!-- Your own JS -->
-    <script src="js/algofun.js"></script>
+    <script src="js/alviz.js"></script>
 </body>
 </html>

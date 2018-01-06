@@ -12,7 +12,9 @@ function koch(order, size) {
   }
 }
 
+treset();
 tspeed(2000);
 tright(90);
 tgoto(-100, 0);
 koch(4,200);
+thide();

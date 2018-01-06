@@ -1,4 +1,4 @@
-function fractal60(n, size) {
+function fractal90(n, size) {
   if (n === 0) {
     return;
   }
@@ -10,18 +10,18 @@ function fractal60(n, size) {
 
   tsetpos(p);
   tsetheading(p);
-  tleft(30);
-  fractal60(n - 1, size * 2 / 3);
+  tleft(90);
+  fractal90(n - 1, size * 2 / 3);
 
 
   tsetpos(p);
   tsetheading(p);
-  tright(30);
-  fractal60(n - 1, size * 2 / 3);
+  tright(90);
+  fractal90(n - 1, size * 2 / 3);
 }
 
 treset();
 tspeed(100);
-tgoto(0, -140);
-fractal60(8, 100);
+tgoto(0, -100);
+fractal90(8, 100);
 thide();
