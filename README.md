@@ -1,5 +1,5 @@
 # Alviz 
-[Practice algorithms like an Artist!](https://rawgit.com/hoangdangninh/Alviz/master/index.html) :turtle::turtle::turtle:
+[Practice Algorithms like an Artist!](https://rawgit.com/hoangdangninh/Alviz/master/index.html) :turtle::turtle::turtle::turtle::turtle::turtle::turtle::turtle::turtle::turtle::turtle::turtle::turtle::turtle::turtle:
 <img width="600" alt="7" src="https://user-images.githubusercontent.com/5388947/34641346-5e1197c2-f2c8-11e7-9f27-9ac658664cc1.png">
 
 ## Getting Started
