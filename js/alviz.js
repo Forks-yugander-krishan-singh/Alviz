@@ -118,13 +118,7 @@ function load() {
   // construct new path by looking at its text
   // note `this` is bound to the li being clicked
   var currentFile = $(this).text() + ".js";
-  var newPath = window.location.protocol
-                + "//"
-                + window.location.host
-                + "/"
-                + "Alviz/recipes"
-                + "/"
-                + currentFile;
+  var newPath = "../recipes/" + currentFile;
   var jqxhr = $.get(newPath, function(data) {
       editor.setValue(data);
   })
