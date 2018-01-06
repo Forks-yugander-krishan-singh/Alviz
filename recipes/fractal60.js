@@ -23,5 +23,5 @@ function fractal60(n, size) {
 treset();
 tspeed(100);
 tgoto(0, -140);
-fractal60(8, 100);
+fractal60(6, 100);
 thide();
