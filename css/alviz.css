@@ -70,3 +70,7 @@ li[name="output"] {
     color: #001f3f;
 }
 
+#likes {
+    text-align: right;
+}
+
