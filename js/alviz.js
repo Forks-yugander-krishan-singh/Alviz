@@ -54,10 +54,34 @@ function vimToggle() {
   }
 }
 
+function saveTextAsFile() {
+  var recipe = editor.getValue();
+  // var textToWrite = document.getElementById('textArea');
+  var textFileAsBlob = new Blob([ recipe ], { type: 'text/plain' });
+  var fileNameToSaveAs = "rcat.js";
+
+  var downloadLink = document.createElement("a");
+  downloadLink.download = fileNameToSaveAs;
+  downloadLink.innerHTML = "Download File";
+  if (window.webkitURL != null) {
+    // Chrome allows the link to be clicked without actually adding it to the DOM.
+    downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+  } else {
+    // Firefox requires the link to be added to the DOM before it can be clicked.
+    downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+    downloadLink.onclick = destroyClickedElement;
+    downloadLink.style.display = "none";
+    document.body.appendChild(downloadLink);
+  }
+
+  downloadLink.click();
+}
+
 // bind click action on editor
 $("#run").bind("click", run);
 $("#help").bind("click", help);
 $("#vim").bind("click", vimToggle);
+$("#save").bind("click", saveTextAsFile);
 // bind short keys action on editor
 $(document).keydown((event) => {
     if ((event.keyCode == 10 || event.keyCode == 13) && event.ctrlKey) {
@@ -66,9 +90,10 @@ $(document).keydown((event) => {
       help();
     } else if (event.keyCode == 190 && event.ctrlKey) {
       vimToggle();
+    } else if (event.keyCode == 83 && event.ctrlKey) {
+      saveTextAsFile();
     };
 });
-
 
 
 
@@ -137,8 +162,6 @@ function toggleCanvas(){
 }
 
 $("#turtlebox").click(toggleCanvas);
-
-
 
 
 // Artist mode public API
