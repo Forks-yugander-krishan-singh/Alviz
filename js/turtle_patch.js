@@ -3,7 +3,7 @@
 *** TURTLE PATCH                                            ***
 *** @author: hd                                             ***
 *** @description: synchronize animation in original script  ***
-*** @dependency: turtle.js                                  ***
+*** @dependency: ./js/vendor/turtle.js                      ***
 *** @date: 01/05/2018                                       ***
 *** @license: MIT                                           ***
 ***
