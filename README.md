@@ -1,6 +1,6 @@
 # Alviz 
 Practice algorithms like an artist! :turtle::turtle::turtle:
-
+![Pic 1](https://photos.app.goo.gl/M6IQtwgRtsK4fmxR2 "1")
 
 ## Getting Started
 Instructions on how to get this project running on your local machine
