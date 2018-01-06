@@ -20,6 +20,9 @@ console.log = function(value) {
 
 // get output
 function run() {
+  // make sure queue is empty before running
+  _emptyQ();
+
   output = [];
   var result;
   try {
@@ -136,12 +139,14 @@ function autocheck(li) {
 function checkAndToggle() {
   autocheck($(this));
   toggleCanvas();
+  run();
 }
 
 // bind action algorithms
-// 2 things happened when loading an algorithm into editor
+// 3 things happened when loading an algorithm into editor
 // first is load to the editor
 // second is decide the appropriate canvas to operate on
+// third is to auto run the algorithm
 $("#algorithms").on('click', 'li', load)
                 .on('click', 'li', checkAndToggle);
 
@@ -184,10 +189,6 @@ function download(path) {
 };
 
 
-function acv() {
-  return cv;
-}
-
-function actx() {
-  return ctx;
-}
+// PUBLIC API
+var acv = cv;
+var actx = ctx;

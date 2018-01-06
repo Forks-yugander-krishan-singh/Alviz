@@ -1,6 +1,6 @@
 const n = 80;
 
-var myChart = new Chart(ctx, {
+var myChart = new Chart(actx, {
     type: 'bar',
     data: {
       labels: Array.from({length: n}, () => ""),

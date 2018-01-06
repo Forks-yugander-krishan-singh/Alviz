@@ -55,6 +55,13 @@ function _tinit() {
   requestAnimationFrame(_process_queue);
 }
 
+///////////////////////////////////////
+///////  PROTECTED API          //////
+/////////////////////////////////////
+
+function _emptyQ() {
+  _queue.length = 0;
+}
 
 ///////////////////////////////////////////////////////////////////
 //////////////       PUBLIC API                 //////////////////
@@ -161,4 +168,3 @@ function tsetheading(obj) {
 function tlog(obj) {
   _animate(console.log, [obj]);
 }
-
