@@ -14,6 +14,8 @@ editor.getSession().setTabSize(2);
 editor.isVim = false;
 
 
+// production or not
+var prod = (window.location.hostname == "localhost" ? false : true);
 
 // global variable for artist canvas
 var cv = $("#artistcanvas")[0];
@@ -121,7 +123,13 @@ function load() {
   // construct new path by looking at its text
   // note `this` is bound to the li being clicked
   var currentFile = $(this).text() + ".js";
-  var newPath = "../recipes/" + currentFile;
+
+  if (!prod) {
+    var newPath = "../recipes/" + currentFile;
+  }
+  else {
+    var newPath = "https://cdn.rawgit.com/hoangdangninh/Alviz/72473455/recipes/" + currentFile;
+  }
   var jqxhr = $.get(newPath, function(data) {
       editor.setValue(data);
   })
