@@ -41,12 +41,12 @@ function* bubbleSort(a)
 var s = bubbleSort(myChart.data.datasets[0].data);
 
 function chartUpdate() {
-  v = s.next()
+  v = s.next();
   if (v.done) {
-    clearInterval(id)
-    return
+    clearInterval(id);
+    return;
   }
-  myChart.update()
+  myChart.update();
 }
 
 var id = setInterval(chartUpdate, 1);

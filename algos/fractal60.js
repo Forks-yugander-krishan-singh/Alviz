@@ -3,22 +3,24 @@ function fractal60(n, size) {
     return;
   }
 
-  forward(size);
-  var [x, y] = tpos();
-  var deg = theading();
+  tforward(size);
+  var p = {};
+  tpos(p);
+  theading(p);
 
-  goto(x, y);
-  tsetheading(deg);
-  left(30);
+  tsetpos(p);
+  tsetheading(p);
+  tleft(30);
   fractal60(n - 1, size * 2 / 3);
 
 
-  goto(x, y);
-  tsetheading(deg);
-  right(30);
+  tsetpos(p);
+  tsetheading(p);
+  tright(30);
   fractal60(n - 1, size * 2 / 3);
 }
 
-tspeed(1);
-goto(0, -50);
-fractal60(8, 50);
+treset();
+tspeed(100);
+tgoto(0, -140);
+fractal60(8, 100);

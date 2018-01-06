@@ -39,10 +39,10 @@ function _process_queue(timestamp) {
     // execute each method in the queue
     // depending on the number of arguments
     if (event[1].length == 1) {
-      event[0](event[1][0]);
+      event[0](event[1][0]);    // case f(x)
     }
     else if (event[1].length == 2) {
-      event[0](event[1][0], event[1][1]);
+      event[0](event[1][0], event[1][1]);  //case f(x,y);
     }
   }
 
@@ -123,19 +123,42 @@ function tcsize() {
   return [imageCanvas.width, imageCanvas.height];
 }
 
-function tpos() {
-  return [turtle.pos.x, turtle.pos.y];
+function tpos(obj) {
+  _animate(_getpos, [obj]);
 }
 
-function theading() {
-  return radToDeg(turtle.angle);
+function _getpos(obj) {
+  obj.x = turtle.pos.x;
+  obj.y = turtle.pos.y;
 }
 
-// function tsetheading(deg) {
-//   _animate(angle, [deg]);
-// }
+function theading(obj) {
+  _animate(_getheading, [obj]);
+}
 
-var tsetheading = angle;
+function _getheading(obj) {
+  obj.angle = radToDeg(turtle.angle);
+}
+
+function tsetpos(obj) {
+  _animate(_setpos, [obj]);
+}
+
+function _setpos(obj) {
+  goto(obj.x, obj.y);
+}
+
+function tsetheading(obj) {
+  _animate(_setheading, [obj]);
+}
+
+function _setheading(obj) {
+  turtle.angle = degToRad(obj.angle);
+  draw();
+}
 
 
-var tsetpos = tgoto;
+function tlog(obj) {
+  _animate(console.log, [obj]);
+}
+
