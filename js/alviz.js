@@ -58,11 +58,11 @@ function vimToggle() {
   if (!editor.isVim) {
     editor.setKeyboardHandler("ace/keyboard/vim");
     editor.isVim = true;
-    $("#vim").text("Vim");
+    $("#vim").text("VIM");
   } else {
     editor.setKeyboardHandler("");
     editor.isVim = false;
-    $("#vim").text("Vim?");
+    $("#vim").text("VIM?");
   }
 }
 
