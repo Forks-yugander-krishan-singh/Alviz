@@ -59,7 +59,7 @@ function _tinit() {
 ///////  PROTECTED API          //////
 /////////////////////////////////////
 
-function _emptyQ() {
+function emptyQ() {
   _queue.length = 0;
 }
 

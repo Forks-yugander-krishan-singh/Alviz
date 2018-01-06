@@ -30,7 +30,7 @@ console.log = function(value) {
 // get output
 function run() {
   // make sure queue is empty before running
-  _emptyQ();
+  emptyQ();
 
   output = [];
   var result;
@@ -94,6 +94,7 @@ $("#run").bind("click", run);
 $("#help").bind("click", help);
 $("#vim").bind("click", vimToggle);
 $("#save").bind("click", saveTextAsFile);
+$("#stop").bind("click", emptyQ);
 // bind short keys action on editor
 $(document).keydown((event) => {
     if ((event.keyCode == 10 || event.keyCode == 13) && event.ctrlKey) {
@@ -104,6 +105,8 @@ $(document).keydown((event) => {
       vimToggle();
     } else if (event.keyCode == 83 && event.ctrlKey) {
       saveTextAsFile();
+    } else if (event.keyCode == 71 && event.ctrlKey) {
+      emptyQ();
     };
 });
 
